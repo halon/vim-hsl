@@ -1,0 +1,104 @@
+// Assignment
+$var = 42;
+if (($random = rand(0, 9)) > 5) echo "$random is larger than 5";
+$var = 5;
+$var = $var + 5; // 10
+$var = 5;
+$var += 5; // 10
+[$a, $b, $c = 3] = [1, 2];
+echo $a; // 1
+echo $b; // 2
+echo $c; // 3 // default value
+[$a, $b, ...$c] = [1, 2, 3, 4];
+echo $c; // [3, 4]
+$var = [1, 2, 7, 5];
+$var[2:3] = [3, 4]; // 1, 2, 3, 4, 5
+
+// Arithmetic
+$var = (3 - 2) + 2;
+
+// String
+echo "Hello " . "World";
+echo "A number " . 5.5;
+echo 1.0 . 2.5; // "12.5"
+echo "Hello %s!" % [ "World" ];
+echo "x" * 8; // xxxxxxxx
+echo 8 * "x"; // xxxxxxxx
+
+// Array
+$var = ["bar", "bar"];
+echo $var[2]; // not found none is returned
+$var = [];
+$var[2] = "baz";
+echo $var[2]; // "baz"
+$var = [];
+$var[] = "baz";
+echo $var[0]; // "baz"
+$var = ["foo" => ["bar" => 123]];
+echo $var[...["foo", "bar"]]; // 123
+$var[...["foo", "baz"]] = 456;
+echo ["1"=>123]; // [1=>123]
+echo [1.9=>123]; // [1=>123]
+echo ["1.9"=>123]; // ["1.9"=>123]
+$test = "Halon";
+echo $test[:]; // Halon
+echo $test[1:4]; // alo
+echo $test[-1:]; // n
+echo $test[-3:]; // lon
+echo $test[-5:-2]; // Hal
+echo $test[:2] . $test[2:]; // Halon
+echo "Halon"[::-1]; // "nolaH"
+echo ["foo", 5] - 5; // [0=>"foo"]
+echo ["foo", "foo", 5] - "foo"; // [2=>5]
+echo ["foo", 5] - ["foo", 5]; // []
+echo ["x", "y"] * 2; // [x, y, x, y]
+echo 8 * ["x", "y"]; // [x, y, x, y]
+$parts = ["second", "second to last"];
+echo ["first", ...$parts, "last"];
+// [0=>"first",1=>"second",2=>"second to last",3=>"last"]
+
+// Logic
+function foo() { return true; }
+function bar() { return false; }
+
+if (foo() or bar()) echo "foo or bar";
+
+// Bitwise
+$flags = 5;
+
+$flagA = 0b0001;
+$flagB = 0b0010;
+$flagC = 0b0100;
+$flagD = 0b1000;
+if ($flags & ($flagB | $flagC)) echo "match";
+
+// Function
+$multiply = function ($x, $y) { return $x * $y };
+echo $multiply(3, 5); // 5
+
+// Class
+class makeCounter
+{
+        constructor() { $this->n = 0; }
+        function inc() { $this->n += 1; }
+        function get() { return $this->n; }
+}
+$counter1 = makeCounter();
+
+$counter1->inc();   // 1
+$counter1["inc"](); // 2
+echo $counter1->get(); // prints 2
+
+class MyClass
+{
+        static $x = 5;
+        static function getX() { return MyClass::$x; }
+}
+echo MyClass::$x; // 5
+echo MyClass::getX(); // 5
+
+class MyClass
+{
+        static $x = 5;
+        static function getX() { return static::$x; }
+}

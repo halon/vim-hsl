@@ -1,0 +1,245 @@
+// echo
+echo "hello world";
+
+// if
+if (true) {
+        echo "statement is true";
+}
+
+// Ternary operator
+$var = isset($arg) ? $arg : "default value";
+
+// Null coalescing operator
+$data = json_decode(...);
+$var = $data["settings"] ?? "default value";
+
+// for
+for ($i = 0; $i < 10; $i++) {
+        echo $i;
+}
+
+// foreach
+foreach (["Apple", "Banana", "Orange"] as $fruit) {
+        echo $fruit;
+}
+
+// while
+$i = 0;
+while ($i < 10) {
+        echo $i;
+        $i += 1;
+}
+
+// forever
+$i = 0;
+forever {
+        echo $i;
+        $i += 1;
+}
+
+switch ($foo) {
+        case "apple":
+                echo "apple";
+        break;
+        case "bana":
+                echo "banana";
+        break;
+        default:
+                echo "pear";
+        break;
+}
+
+// include
+include "file:1";
+include "1";
+
+import { foo, bar as baz, $x as $y } from "module";
+import { $x as $y } from "module";
+import { $x, $y as $z } from "module";
+import { v1, v2, v2 as vLatest } from "module";
+import * as foo from "foo";
+foo::bar();
+echo foo::$x;
+import $config from "config.json";
+import $lookup from "lookup.csv";
+import $data from "data.txt" with [ "type" => "array" ];
+
+// Function
+funcname("World");
+function funcname($name) {
+        echo "Hello $name";
+}
+
+$variable = function ($name) {
+        echo "Hello $name";
+};
+$variable("World");
+
+echo function ($name) {
+        return "Hello $name";
+}("World");
+
+function makeCounter() {
+        $n = 0;
+        return [
+                "inc" => function () closure ($n) { $n += 1; },
+                "get" => function () closure ($n) { return $n; },
+        ];
+}
+$counter1 = makeCounter();
+$counter2 = makeCounter();
+
+$counter1["inc"]();
+
+echo $counter1["get"](); // 1
+echo $counter2["get"](); // still 0, $counter2 hasn't been updated
+
+$i = 3;
+$f = function ($i) { return function () closure ($i) { return $i * $i; }; } ($i);
+$i = 10;
+echo $f(); // 3 * 3 = 9
+
+function funcname() {
+        return 42;
+}
+
+function hello($name = "World") {
+        return "Hello $name.";
+}
+echo hello(); // Hello World.
+echo hello("You"); // Hello You.
+
+function avg(...$values) {
+        $r = 0;
+        foreach ($values as $v)
+                $r += $v;
+        return $r / length($values);
+}
+
+$values = [0, 5, 10, 15];
+echo avg(...$values);
+
+function Deliver() {
+        global $recipient;
+        echo "Message sent to $recipient";
+        builtin Deliver();
+}
+Deliver();
+
+function strlen($str) {
+        echo "strlen called with $str";
+        return builtin strlen($str);
+}
+
+echo strlen("hello");
+
+// Exception
+try {
+        echo "Hello";
+        throw Exception("Error");
+        echo "You"; // Never executed
+} catch ($e) {
+        echo "World";
+}
+
+// Class
+class Foo
+{
+        constructor($a, $b = 5) { $this->a = $a; }
+}
+$x = Foo(5);
+
+class Foo
+{
+        $value = 0;
+
+        // serialize data members...
+        function serialize() {
+                $data = [];
+                foreach ($this as $k => $v)
+                        if (!is_function($v))
+                                $data[$k] = $v;
+                return $data;
+        }
+
+        // unserialize data members
+        function unserialize($data) {
+                foreach ($data as $k => $v)
+                        $this[$k] = $v;
+                return $this;
+        }
+}
+
+$x = Foo();
+$x->value = 123;
+
+$export = json_decode(json_encode($x->serialize()));
+
+$y = Foo()->unserialize($export);
+echo $y->value;
+
+class Foo
+{
+        $y = 5;
+        constructor() { $this->x = 5; }
+}
+$x = Foo();
+echo $x->x;
+echo $x->y;
+
+class Foo
+{
+        function setX() { $this->x = 5; }
+}
+$x = Foo();
+echo $x->setX();
+
+class Foo
+{
+        static $x = 10;
+}
+echo Foo::$x;
+
+class Foo
+{
+        static $x = 10;
+        static function getX() { return Foo::$x; }
+}
+echo Foo::getX();
+
+class Foo
+{
+        function publicAPI() { $this->do(); }
+        private function do() { }
+
+        static function publicAPI2() { Foo::do2(); }
+        private static function do2() { }
+}
+$x = Foo();
+$x->publicAPI();
+Foo::publicAPI2();
+
+class Foo
+{
+        readonly $count = 0;
+
+        function inc() { $this->count += 1; }
+}
+$x = Foo();
+$x->inc();
+echo $x->count; // 1
+$x->count = 2; // Error
+
+// cache
+// cache both the json_decode() and http() request
+function json_decode_and_http(...$args) {
+            return json_decode(http(...$args));
+}
+$list = cache [] json_decode_and_http("http://api.example.com/v1/get/list");
+
+// barrier
+barrier "counter" => $var {
+        $var = isset($var) ? $var : 0;
+        echo $var;
+        $var += 1;
+}

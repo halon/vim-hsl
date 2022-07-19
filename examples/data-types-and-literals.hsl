@@ -1,0 +1,44 @@
+// Boolean
+if (5 == true) { } // false: 5 is not equal to 1
+if (5) { } // true: 5 is not false, hence true
+
+// Number
+echo 1.0; // 1
+echo 1_000_000; // 1000000
+
+// Hexadecimal
+echo 0xfa; // 250
+echo 0x00_fa; // 250
+
+// Octal
+echo 0o372; // 250
+
+// Binary
+echo 0b11111010; // 250
+echo 0b1111_1010; // 250
+
+// String
+"$variable"
+"${variable}abc"
+''raw string''
+'DELIMITER'raw string'DELIMITER'
+'#'raw string'#'
+
+// Regex
+if ($string =~ #/hello/i) {}
+if (pcre_match(#/hello/i, $string)) {}
+
+// Array
+echo array("value", "value2");
+echo ["value", "value2"];
+echo [0 => "value", 1 => "value2"];
+
+// Function
+$multiply = function ($x, $y) { return $x * $y };
+echo $multiply(3, 5); // 15
+function strlen($str) { return 42; }
+
+// None
+$obj = json_decode("...");
+if ($obj == none)
+        echo "None";
