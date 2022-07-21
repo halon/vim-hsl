@@ -24,6 +24,14 @@ syntax on
 filetype plugin indent on
 ```
 
+### Upgrade
+
+In order to upgrade the plugin, use the following command.
+
+```bash
+git -C ~/.vim/pack/vendor/start/vim-hsl pull
+```
+
 </details>
 
 ## Screenshots
