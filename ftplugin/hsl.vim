@@ -17,7 +17,6 @@ setlocal noautoindent
 setlocal nolisp
 setlocal cindent
 setlocal commentstring=/*%s*/
-setlocal completefunc=syntaxcomplete#Complete
 setlocal omnifunc=syntaxcomplete#Complete
 
 let b:undo_ftplugin = "setlocal nosmartindent< noautoindent< nolisp< cindent< commentstring< completefunc< omnifunc< | " .
