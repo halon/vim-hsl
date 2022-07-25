@@ -38,3 +38,6 @@ git -C ~/.vim/pack/vendor/start/vim-hsl pull
 <p align="center">
   <img src="screenshots/screenshot-1.png" width="697"/>
 </p>
+<p align="center">
+  <img src="screenshots/screenshot-2.png" width="697"/>
+</p>
