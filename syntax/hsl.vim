@@ -10,9 +10,9 @@ syn keyword hslFunction array_every array_filter array_find array_includes array
 syn keyword hslFunction aes_decrypt aes_encrypt hmac_md5 hmac_sha1 hmac_sha2 md5 sha1 sha2 hash rsa_sign rsa_verify ed25519_sign ed25519_verify pkcs7_sign random_bytes random_number crypt
 syn keyword hslFunction length array boolean number string is_array is_boolean is_function is_number is_object is_string isset unset 
 syn keyword hslFunction executiontime sleep strftime strptime time timelocal uptime
-syn keyword hslFunction dns_query domain_includes idna_encode idna_decode
+syn keyword hslFunction dns_query domain_includes domain_publicsuffix idna_encode idna_decode
 syn keyword hslFunction base32_encode base32_decode base64_encode base64_decode zlib_compress zlib_uncompress csv_encode csv_decode json_encode json_decode url_encode url_decode yaml_decode pack unpack
-syn keyword hslFunction http
+syn keyword hslFunction http url_parse
 syn keyword hslFunction envelope_address_parse envelope_localpart_escape header_addresslist_extract header_dkim_decode xtext_encode xtext_decode spf_query
 syn keyword hslFunction abs ceil floor log pow round sqrt
 syn keyword hslFunction gethostname uuid syslog stat inet_includes inet_ntop inet_pton inet_reverse mail
