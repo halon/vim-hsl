@@ -31,7 +31,7 @@ syn keyword hslClass LDAP
 syn keyword hslClass Socket TLSSocket X509
 
 " Conditional
-syn keyword hslConditional else if switch
+syn keyword hslConditional else if switch match
 
 " Repeat
 syn keyword hslRepeat as for foreach while forever
