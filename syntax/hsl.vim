@@ -15,8 +15,8 @@ syn keyword hslFunction base32_encode base32_decode base64_encode base64_decode 
 syn keyword hslFunction http url_parse
 syn keyword hslFunction envelope_address_parse envelope_localpart_escape header_addresslist_extract header_dkim_decode xtext_encode xtext_decode spf_query
 syn keyword hslFunction abs ceil floor log pow round sqrt
-syn keyword hslFunction gethostname uuid syslog stat inet_includes inet_ntop inet_pton inet_reverse mail
-syn keyword hslFunction smtp_lookup_rcpt smtp_lookup_auth ldap_search ldap_bind
+syn keyword hslFunction gethostname uuid syslog inet_includes inet_ntop inet_pton inet_reverse
+syn keyword hslFunction smtp_lookup_rcpt smtp_lookup_auth
 syn keyword hslFunction chr ord str_repeat str_replace str_find str_rfind str_lower str_upper str_slice str_split str_strip str_rstrip str_lstrip
 syn keyword hslFunction pcre_match pcre_match_all pcre_quote pcre_compile pcre_replace
 syn keyword hslFunction queue_policy queue_policy_delete queue_suspend queue_quota
