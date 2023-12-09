@@ -6,9 +6,9 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 " Functions
-syn keyword hslFunction array_every array_filter array_find array_includes array_join array_keys array_map array_range array_reduce array_reverse array_sort array_shuffle array_unique
-syn keyword hslFunction aes_decrypt aes_encrypt hmac_md5 hmac_sha1 hmac_sha2 md5 sha1 sha2 hash rsa_sign rsa_verify ed25519_sign ed25519_verify pkcs7_sign random_bytes random_number crypt
-syn keyword hslFunction length array boolean number string is_array is_boolean is_function is_number is_object is_string isset unset 
+syn keyword hslFunction array_combine array_every array_filter array_find array_includes array_join array_keys array_map array_range array_reduce array_reverse array_sort array_shuffle array_unique
+syn keyword hslFunction aes_decrypt aes_encrypt hmac_md5 hmac_sha1 hmac_sha2 md5 sha1 sha2 hash rsa_privatekey rsa_sign rsa_verify ed25519_privatekey ed25519_sign ed25519_verify pkcs7_sign random_bytes random_number crypt
+syn keyword hslFunction length array boolean number string is_array is_boolean is_function is_number is_object is_string isset unset
 syn keyword hslFunction executiontime sleep strftime strptime time timelocal uptime
 syn keyword hslFunction dns_query domain_includes domain_publicsuffix idna_encode idna_decode
 syn keyword hslFunction base32_encode base32_decode base64_encode base64_decode zlib_compress zlib_uncompress csv_encode csv_decode json_encode json_decode url_encode url_decode yaml_decode pack unpack
