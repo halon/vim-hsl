@@ -6,29 +6,34 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 " Functions
-syn keyword hslFunction array_combine array_every array_filter array_find array_includes array_join array_keys array_map array_range array_reduce array_reverse array_sort array_shuffle array_unique
-syn keyword hslFunction aes_decrypt aes_encrypt hmac_md5 hmac_sha1 hmac_sha2 md5 sha1 sha2 hash rsa_privatekey rsa_sign rsa_verify ed25519_privatekey ed25519_sign ed25519_verify pkcs7_sign random_bytes random_number crypt
+syn keyword hslFunction array_combine array_every array_filter array_find array_includes array_join array_keys array_map array_random array_range array_reduce array_reverse array_sort array_shuffle array_unique
+syn keyword hslFunction aes_decrypt aes_encrypt hmac_md5 hmac_sha1 hmac_sha2 md5 sha1 sha2 hash pkcs11_load rsa_privatekey is_rsa_privatekey rsa_sign rsa_verify ec_privatekey is_ec_privatekey ed25519_privatekey is_ed25519_privatekey ed25519_sign ed25519_verify pkcs7_sign cms_sign cms_verify cms_encrypt cms_decrypt cms_type cms_recipients random_bytes random_number crypt
 syn keyword hslFunction length array boolean number string is_array is_boolean is_function is_number is_object is_string isset unset
-syn keyword hslFunction executiontime sleep strftime strptime time timelocal uptime
+syn keyword hslFunction executiontime sleep strftime strptime strpduration time timelocal uptime
 syn keyword hslFunction dns_query domain_includes domain_publicsuffix idna_encode idna_decode
-syn keyword hslFunction base32_encode base32_decode base64_encode base64_decode zlib_compress zlib_uncompress csv_encode csv_decode json_encode json_decode url_encode url_decode yaml_decode pack unpack
+syn keyword hslFunction base32_encode base32_decode base64_encode base64_decode base64url_encode base64url_decode zlib_compress zlib_uncompress csv_encode csv_decode json_encode json_decode url_encode url_decode mimeword_encode mimeword_decode yaml_decode pack unpack
 syn keyword hslFunction http url_parse
-syn keyword hslFunction envelope_address_parse envelope_localpart_escape header_addresslist_extract header_dkim_decode xtext_encode xtext_decode spf_query
+syn keyword hslFunction envelope_address_parse envelope_localpart_escape header_addresslist_compile header_addresslist_extract header_dkim_decode xtext_encode xtext_decode spf_query
 syn keyword hslFunction abs ceil floor log pow round sqrt
-syn keyword hslFunction gethostname uuid syslog inet_includes inet_ntop inet_pton inet_reverse
+syn keyword hslFunction gethostname uuid uuidv5 syslog inet_includes inet_ntop inet_pton inet_reverse
 syn keyword hslFunction smtp_lookup_rcpt smtp_lookup_auth
-syn keyword hslFunction chr ord str_repeat str_replace str_find str_rfind str_lower str_upper str_slice str_split str_strip str_rstrip str_lstrip
+syn keyword hslFunction chr ord str_repeat str_replace str_find str_rfind str_lower str_upper str_slice str_split str_strip str_rstrip str_lstrip str_chunk
 syn keyword hslFunction pcre_match pcre_match_all pcre_quote pcre_compile pcre_replace
+syn keyword hslFunction is_x509_resource is_x509crl_resource
+syn keyword hslFunction FFIFunction
+syn keyword hslFunction memory_add memory_dec memory_delete memory_exists memory_fetch memory_inc memory_store memory_update
+syn keyword hslFunction server_concurrency
 syn keyword hslFunction queue_policy queue_policy_delete queue_suspend queue_quota
+syn keyword hslFunction metrics_increment metrics_decrement metrics_set metrics_get
 
 " Classes
 syn keyword hslClass Map Set
 syn keyword hslClass Iconv
 syn keyword hslClass File
-syn keyword hslClass Mime MailMessage
+syn keyword hslClass MIME MailMessage
 syn keyword hslClass Exception
-syn keyword hslClass LDAP
-syn keyword hslClass Socket TLSSocket X509
+syn keyword hslClass Socket TLSSocket X509 X509CRL
+syn keyword hslClass FFI
 
 " Conditional
 syn keyword hslConditional else if switch match
