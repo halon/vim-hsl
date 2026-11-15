@@ -32,8 +32,6 @@ In order to upgrade the plugin, use the following command.
 git -C ~/.vim/pack/vendor/start/vim-hsl pull
 ```
 
-</details>
-
 ## Screenshots
 <p align="center">
   <img src="screenshots/screenshot-1.png" width="697"/>
